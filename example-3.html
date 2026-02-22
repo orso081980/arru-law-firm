@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arru Studio Legale | Cagliari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        red: { DEFAULT: '#c8102e', dark: '#a00d22' },
+                        ink: '#1a1a1a',
+                    },
+                    fontFamily: {
+                        sans: ['Barlow', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body class="font-sans text-ink bg-white overflow-x-hidden">
+
+    <!-- ═══════════════════════════
+  NAVBAR
+═══════════════════════════ -->
+    <div id="nav-wrap" class="sticky top-0 z-50 bg-white border-b border-gray-200">
+        <div class="max-w-screen-xl mx-auto flex items-stretch h-16 px-8">
+
+            <!-- Logo -->
+            <a href="#" class="flex flex-col justify-center mr-12 flex-shrink-0 leading-none">
+                <span class="text-2xl font-bold tracking-wide uppercase text-ink">Arru<span
+                        class="text-red">.</span></span>
+                <span class="text-xs tracking-widest uppercase text-gray-400 mt-0.5">Studio Legale · Cagliari</span>
+            </a>
+
+            <!-- Desktop nav links -->
+            <ul class="hidden lg:flex items-stretch gap-0 flex-1 list-none">
+                <!-- Practice with mega -->
+                <li class="relative group flex items-center">
+                    <a href="#practice"
+                        class="flex items-center h-full px-4 text-xs font-semibold tracking-wide uppercase text-gray-700 border-b-2 border-transparent group-hover:text-red group-hover:border-red transition-all duration-150 whitespace-nowrap">Practice
+                        ▾</a>
+                    <div
+                        class="absolute top-full left-0 hidden group-hover:flex bg-white border-t-2 border-red shadow-xl min-w-max z-50 p-8 gap-12">
+                        <div>
+                            <h4
+                                class="text-xs font-bold tracking-widest uppercase text-red mb-3 pb-2 border-b border-gray-200">
+                                Aree di Diritto</h4>
+                            <ul class="space-y-2">
+                                <li><a href="#practice"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Diritto
+                                        Civile</a></li>
+                                <li><a href="#practice"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Diritto
+                                        Societario</a></li>
+                                <li><a href="#practice"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Diritto
+                                        Bancario</a></li>
+                                <li><a href="#practice"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Diritto
+                                        Immobiliare</a></li>
+                                <li><a href="#practice"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Diritto di
+                                        Famiglia</a></li>
+                                <li><a href="#practice"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Successioni</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4
+                                class="text-xs font-bold tracking-widest uppercase text-red mb-3 pb-2 border-b border-gray-200">
+                                Contenzioso</h4>
+                            <ul class="space-y-2">
+                                <li><a href="#practice"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Rappresentanza in
+                                        Cassazione</a></li>
+                                <li><a href="#practice"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Contenzioso
+                                        Civile</a></li>
+                                <li><a href="#practice"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Contenzioso
+                                        Bancario</a></li>
+                                <li><a href="#practice"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Mediazione e
+                                        ADR</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Settori with mega -->
+                <li class="relative group flex items-center">
+                    <a href="#settori"
+                        class="flex items-center h-full px-4 text-xs font-semibold tracking-wide uppercase text-gray-700 border-b-2 border-transparent group-hover:text-red group-hover:border-red transition-all duration-150 whitespace-nowrap">Settori
+                        ▾</a>
+                    <div
+                        class="absolute top-full left-0 hidden group-hover:flex bg-white border-t-2 border-red shadow-xl min-w-max z-50 p-8 gap-12">
+                        <div>
+                            <h4
+                                class="text-xs font-bold tracking-widest uppercase text-red mb-3 pb-2 border-b border-gray-200">
+                                Settori Specifici</h4>
+                            <ul class="space-y-2">
+                                <li><a href="#settori"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Imprese e PMI</a>
+                                </li>
+                                <li><a href="#settori"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Clienti
+                                        Privati</a></li>
+                                <li><a href="#settori"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Istituti
+                                        Bancari</a></li>
+                                <li><a href="#settori"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Successioni
+                                        d'Impresa</a></li>
+                                <li><a href="#settori"
+                                        class="text-sm text-gray-500 hover:text-red transition-colors">Real Estate</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="flex items-center"><a href="#team"
+                        class="flex items-center h-full px-4 text-xs font-semibold tracking-wide uppercase text-gray-700 border-b-2 border-transparent hover:text-red hover:border-red transition-all duration-150">Professionisti</a>
+                </li>
+                <li class="flex items-center"><a href="#valori"
+                        class="flex items-center h-full px-4 text-xs font-semibold tracking-wide uppercase text-gray-700 border-b-2 border-transparent hover:text-red hover:border-red transition-all duration-150">Valori</a>
+                </li>
+                <li class="flex items-center"><a href="#news"
+                        class="flex items-center h-full px-4 text-xs font-semibold tracking-wide uppercase text-gray-700 border-b-2 border-transparent hover:text-red hover:border-red transition-all duration-150">News</a>
+                </li>
+            </ul>
+
+            <!-- Right pills -->
+            <div class="hidden lg:flex items-center gap-2 ml-auto">
+                <a href="#news"
+                    class="text-xs font-semibold tracking-wide px-4 py-2 border border-ink text-ink hover:bg-ink hover:text-white transition-colors duration-150">News</a>
+                <a href="#contact"
+                    class="text-xs font-semibold tracking-wide px-4 py-2 bg-red text-white hover:bg-red-dark transition-colors duration-150">Contatti</a>
+            </div>
+
+            <!-- Hamburger -->
+            <button id="hamburger" class="lg:hidden ml-auto flex flex-col gap-1.5 justify-center p-1">
+                <span class="block w-6 h-px bg-ink"></span>
+                <span class="block w-6 h-px bg-ink"></span>
+                <span class="block w-6 h-px bg-ink"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile nav overlay -->
+    <div id="mob-nav" class="hidden fixed inset-0 z-50 bg-white flex-col pt-20 px-8 pb-10 overflow-y-auto">
+        <button id="mob-close" class="absolute top-4 right-6 text-3xl text-ink">×</button>
+        <a href="#practice"
+            class="mob-l block py-4 border-b border-gray-200 text-lg font-medium text-ink hover:text-red">Practice</a>
+        <a href="#settori"
+            class="mob-l block py-4 border-b border-gray-200 text-lg font-medium text-ink hover:text-red">Settori</a>
+        <a href="#team"
+            class="mob-l block py-4 border-b border-gray-200 text-lg font-medium text-ink hover:text-red">Professionisti</a>
+        <a href="#valori"
+            class="mob-l block py-4 border-b border-gray-200 text-lg font-medium text-ink hover:text-red">Valori</a>
+        <a href="#news"
+            class="mob-l block py-4 border-b border-gray-200 text-lg font-medium text-ink hover:text-red">News</a>
+        <a href="#contact"
+            class="mob-l block mt-6 bg-red text-white text-center py-4 text-sm font-bold tracking-widest uppercase">Contatti</a>
+    </div>
+
+
+    <!-- ═══════════════════════════
+  HERO — white left / photo right (SLB exact)
+═══════════════════════════ -->
+    <section id="home" class="grid grid-cols-1 lg:grid-cols-2"
+        style="height:calc(100vh - 64px); max-height:780px; min-height:480px;">
+
+        <!-- Left: white text panel -->
+        <div class="bg-white flex flex-col justify-end px-10 pb-14 pt-10 lg:px-14 lg:pb-16">
+            <p id="hero-tag" class="text-xs font-bold tracking-widest uppercase text-red mb-5"></p>
+            <h1 id="hero-heading" class="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-ink mb-6"></h1>
+            <p id="hero-sub" class="text-sm font-light text-gray-500 leading-relaxed max-w-md mb-8"></p>
+            <div>
+                <a id="hero-btn" href="#"
+                    class="inline-block bg-red text-white text-xs font-bold tracking-widest uppercase px-7 py-3.5 hover:bg-red-dark transition-colors duration-150"></a>
+            </div>
+            <!-- Dots + arrows -->
+            <div class="flex items-center gap-2 mt-10">
+                <div class="h-dot w-8 h-0.5 bg-red cursor-pointer" data-i="0"></div>
+                <div class="h-dot w-8 h-0.5 bg-gray-200 cursor-pointer" data-i="1"></div>
+                <div class="h-dot w-8 h-0.5 bg-gray-200 cursor-pointer" data-i="2"></div>
+                <button id="prev"
+                    class="ml-2 w-9 h-9 border border-gray-300 flex items-center justify-center text-base text-ink hover:border-red hover:text-red transition-colors">&#8592;</button>
+                <button id="next"
+                    class="w-9 h-9 border border-gray-300 flex items-center justify-center text-base text-ink hover:border-red hover:text-red transition-colors">&#8594;</button>
+            </div>
+        </div>
+
+        <!-- Right: photo (stacked images, fade) -->
+        <div class="relative overflow-hidden hidden lg:block">
+            <img id="img-0"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100"
+                src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&q=85&fit=crop" alt="" />
+            <img id="img-1"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=85&fit=crop" alt="" />
+            <img id="img-2"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+                src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1200&q=85&fit=crop" alt="" />
+        </div>
+    </section>
+
+    <!-- Slide data (hidden) -->
+    <div id="slide-data" class="hidden">
+        <div data-tag="Cagliari · dal 1975" data-heading="I migliori avvocati<br>a vostra disposizione<br>in Sardegna."
+            data-sub="Studio Legale Arru è uno dei punti di riferimento storici del foro cagliaritano. Cassazionista iscritto dal 1975, al vostro servizio da oltre mezzo secolo."
+            data-btn="LEGGI DI PIÙ" data-href="#about"></div>
+        <div data-tag="Practice" data-heading="Diritto civile e societario,<br>anche a livello<br>internazionale."
+            data-sub="Avvocati specializzati in diritto civile, societario e bancario con una solida esperienza nel contenzioso fino alla Corte di Cassazione."
+            data-btn="LE NOSTRE COMPETENZE" data-href="#practice"></div>
+        <div data-tag="Il Team" data-heading="Partner affidabile<br>per privati, imprese<br>e istituzioni."
+            data-sub="Un team di famiglia con radici profonde in Sardegna. Tre professionisti, un'unica missione: il vostro miglior risultato."
+            data-btn="I PROFESSIONISTI" data-href="#team"></div>
+    </div>
+
+
+    <!-- ═══════════════════════════
+  STATS STRIP
+═══════════════════════════ -->
+    <div class="bg-gray-50 border-b border-gray-200 flex flex-wrap">
+        <div class="flex-1 min-w-40 flex flex-col items-center justify-center py-7 px-6 border-r border-gray-200">
+            <span class="text-3xl font-bold text-ink">50+</span>
+            <span class="text-xs tracking-widest uppercase text-gray-400 mt-1">Anni di attività</span>
+        </div>
+        <div class="flex-1 min-w-40 flex flex-col items-center justify-center py-7 px-6 border-r border-gray-200">
+            <span class="text-3xl font-bold text-ink">1975</span>
+            <span class="text-xs tracking-widest uppercase text-gray-400 mt-1">Anno di fondazione</span>
+        </div>
+        <div class="flex-1 min-w-40 flex flex-col items-center justify-center py-7 px-6 border-r border-gray-200">
+            <span class="text-3xl font-bold text-ink">3</span>
+            <span class="text-xs tracking-widest uppercase text-gray-400 mt-1">Avvocati in organico</span>
+        </div>
+        <div class="flex-1 min-w-40 flex flex-col items-center justify-center py-7 px-6">
+            <span class="text-xl font-bold text-ink">Cassazionista</span>
+            <span class="text-xs tracking-widest uppercase text-gray-400 mt-1">Massimo grado di rappresentanza</span>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════
+  PRACTICE SECTION
+═══════════════════════════ -->
+    <section id="practice" class="max-w-screen-xl mx-auto px-8 py-20">
+        <!-- Two-col header: label left, content right — identical to SLB -->
+        <div class="grid grid-cols-1 lg:grid-cols-[180px_1fr] gap-10 mb-14">
+            <div class="text-xs font-bold tracking-widest uppercase text-red pt-1">Practice</div>
+            <div>
+                <h2 class="text-3xl lg:text-4xl font-bold leading-snug text-ink">I vostri esperti in<br /><em
+                        class="font-light italic">diritto civile e societario</em></h2>
+                <p class="mt-5 text-sm text-gray-500 leading-relaxed max-w-2xl">Copriamo le principali aree del diritto
+                    civile e commerciale con avvocati specializzati. La nostra competenza è confermata da decenni di
+                    attività forense e da una reputazione consolidata nel foro cagliaritano e davanti alla Corte di
+                    Cassazione.</p>
+                <a href="#practice"
+                    class="inline-flex items-center gap-2 mt-5 text-xs font-bold tracking-widest uppercase text-red hover:gap-4 transition-all duration-200">LEGGI
+                    DI PIÙ →</a>
+            </div>
+        </div>
+
+        <p class="text-xs font-bold tracking-widest uppercase text-gray-400 mb-4">Le nostre aree di competenza in
+            sintesi</p>
+
+        <!-- Practice A–Z grid, bordered like SLB -->
+        <div class="border-t border-l border-gray-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="#"
+                class="group flex items-center justify-between px-6 py-4 border-r border-b border-gray-200 text-sm text-ink hover:bg-gray-50 hover:text-red transition-colors duration-150">Diritto
+                Civile <span
+                    class="text-red opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0 transition-transform duration-150">→</span></a>
+            <a href="#"
+                class="group flex items-center justify-between px-6 py-4 border-r border-b border-gray-200 text-sm text-ink hover:bg-gray-50 hover:text-red transition-colors duration-150">Diritto
+                Societario <span class="text-red opacity-0 group-hover:opacity-100 transition-opacity">→</span></a>
+            <a href="#"
+                class="group flex items-center justify-between px-6 py-4 border-r border-b border-gray-200 text-sm text-ink hover:bg-gray-50 hover:text-red transition-colors duration-150">Diritto
+                Bancario e Finanziario <span
+                    class="text-red opacity-0 group-hover:opacity-100 transition-opacity">→</span></a>
+            <a href="#"
+                class="group flex items-center justify-between px-6 py-4 border-r border-b border-gray-200 text-sm text-ink hover:bg-gray-50 hover:text-red transition-colors duration-150">Diritto
+                Immobiliare <span class="text-red opacity-0 group-hover:opacity-100 transition-opacity">→</span></a>
+            <a href="#"
+                class="group flex items-center justify-between px-6 py-4 border-r border-b border-gray-200 text-sm text-ink hover:bg-gray-50 hover:text-red transition-colors duration-150">Diritto
+                di Famiglia <span class="text-red opacity-0 group-hover:opacity-100 transition-opacity">→</span></a>
+            <a href="#"
+                class="group flex items-center justify-between px-6 py-4 border-r border-b border-gray-200 text-sm text-ink hover:bg-gray-50 hover:text-red transition-colors duration-150">Successioni
+                e Pianificazione <span
+                    class="text-red opacity-0 group-hover:opacity-100 transition-opacity">→</span></a>
+            <a href="#"
+                class="group flex items-center justify-between px-6 py-4 border-r border-b border-gray-200 text-sm text-ink hover:bg-gray-50 hover:text-red transition-colors duration-150">Contenzioso
+                Civile <span class="text-red opacity-0 group-hover:opacity-100 transition-opacity">→</span></a>
+            <a href="#"
+                class="group flex items-center justify-between px-6 py-4 border-r border-b border-gray-200 text-sm text-ink hover:bg-gray-50 hover:text-red transition-colors duration-150">Rappresentanza
+                in Cassazione <span class="text-red opacity-0 group-hover:opacity-100 transition-opacity">→</span></a>
+            <a href="#"
+                class="group flex items-center justify-between px-6 py-4 border-r border-b border-gray-200 text-sm text-ink hover:bg-gray-50 hover:text-red transition-colors duration-150">Mediazione
+                e ADR <span class="text-red opacity-0 group-hover:opacity-100 transition-opacity">→</span></a>
+            <a href="#"
+                class="group flex items-center justify-between px-6 py-4 border-r border-b border-gray-200 text-sm text-ink hover:bg-gray-50 hover:text-red transition-colors duration-150">Responsabilità
+                Civile <span class="text-red opacity-0 group-hover:opacity-100 transition-opacity">→</span></a>
+            <a href="#"
+                class="group flex items-center justify-between px-6 py-4 border-r border-b border-gray-200 text-sm text-ink hover:bg-gray-50 hover:text-red transition-colors duration-150">Diritto
+                Contrattuale <span class="text-red opacity-0 group-hover:opacity-100 transition-opacity">→</span></a>
+            <a href="#"
+                class="group flex items-center justify-between px-6 py-4 border-r border-b border-gray-200 text-sm text-ink hover:bg-gray-50 hover:text-red transition-colors duration-150">Negoziazione
+                Assistita <span class="text-red opacity-0 group-hover:opacity-100 transition-opacity">→</span></a>
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-200" />
+
+
+    <!-- ═══════════════════════════
+  SETTORI — icon grid like SLB
+═══════════════════════════ -->
+    <section id="settori" class="max-w-screen-xl mx-auto px-8 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-[180px_1fr] gap-10 mb-14">
+            <div class="text-xs font-bold tracking-widest uppercase text-red pt-1">Settori</div>
+            <div>
+                <h2 class="text-3xl lg:text-4xl font-bold leading-snug text-ink">La nostra competenza –<br /><em
+                        class="font-light italic">il vostro vantaggio.</em></h2>
+            </div>
+        </div>
+
+        <!-- Grid of icon tiles with SVG — SLB style bordered squares -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 border-t border-l border-gray-200">
+            <!-- tile -->
+            <div
+                class="group border-r border-b border-gray-200 p-7 flex flex-col gap-4 cursor-pointer hover:bg-gray-50 transition-colors">
+                <svg class="w-12 h-12" viewBox="0 0 64 64" fill="none" stroke="#1a1a1a" stroke-width="1.5">
+                    <rect x="8" y="20" width="48" height="36" rx="1" />
+                    <rect x="20" y="8" width="24" height="12" />
+                    <line x1="8" y1="32" x2="56" y2="32" />
+                    <line x1="26" y1="32" x2="26" y2="56" />
+                    <line x1="38" y1="32" x2="38" y2="56" />
+                </svg>
+                <span class="text-sm font-medium text-ink group-hover:text-red transition-colors">Imprese e PMI</span>
+            </div>
+            <div
+                class="group border-r border-b border-gray-200 p-7 flex flex-col gap-4 cursor-pointer hover:bg-gray-50 transition-colors">
+                <svg class="w-12 h-12" viewBox="0 0 64 64" fill="none" stroke="#1a1a1a" stroke-width="1.5">
+                    <circle cx="32" cy="22" r="11" />
+                    <path d="M10 56c0-12 9.5-20 22-20s22 8 22 20" />
+                </svg>
+                <span class="text-sm font-medium text-ink group-hover:text-red transition-colors">Clienti Privati</span>
+            </div>
+            <div
+                class="group border-r border-b border-gray-200 p-7 flex flex-col gap-4 cursor-pointer hover:bg-gray-50 transition-colors">
+                <svg class="w-12 h-12" viewBox="0 0 64 64" fill="none" stroke="#1a1a1a" stroke-width="1.5">
+                    <rect x="10" y="24" width="44" height="32" rx="1" />
+                    <path d="M22 24V18a10 10 0 0 1 20 0v6" />
+                    <rect x="28" y="36" width="8" height="8" rx="1" />
+                </svg>
+                <span class="text-sm font-medium text-ink group-hover:text-red transition-colors">Istituti
+                    Bancari</span>
+            </div>
+            <div
+                class="group border-r border-b border-gray-200 p-7 flex flex-col gap-4 cursor-pointer hover:bg-gray-50 transition-colors">
+                <svg class="w-12 h-12" viewBox="0 0 64 64" fill="none" stroke="#1a1a1a" stroke-width="1.5">
+                    <path d="M32 8 L54 22 L54 30 L10 30 L10 22 Z" />
+                    <rect x="14" y="30" width="6" height="22" />
+                    <rect x="29" y="30" width="6" height="22" />
+                    <rect x="44" y="30" width="6" height="22" />
+                    <line x1="8" y1="52" x2="56" y2="52" />
+                </svg>
+                <span class="text-sm font-medium text-ink group-hover:text-red transition-colors">Successioni
+                    d'Impresa</span>
+            </div>
+            <div
+                class="group border-r border-b border-gray-200 p-7 flex flex-col gap-4 cursor-pointer hover:bg-gray-50 transition-colors">
+                <svg class="w-12 h-12" viewBox="0 0 64 64" fill="none" stroke="#1a1a1a" stroke-width="1.5">
+                    <rect x="12" y="28" width="40" height="28" rx="1" />
+                    <path d="M20 28V20a12 12 0 0 1 24 0v8" />
+                </svg>
+                <span class="text-sm font-medium text-ink group-hover:text-red transition-colors">Real Estate</span>
+            </div>
+            <div
+                class="group border-r border-b border-gray-200 p-7 flex flex-col gap-4 cursor-pointer hover:bg-gray-50 transition-colors">
+                <svg class="w-12 h-12" viewBox="0 0 64 64" fill="none" stroke="#1a1a1a" stroke-width="1.5">
+                    <circle cx="32" cy="32" r="20" />
+                    <polyline points="32,20 32,32 40,40" />
+                </svg>
+                <span class="text-sm font-medium text-ink group-hover:text-red transition-colors">Consulenza
+                    Continuativa</span>
+            </div>
+            <div
+                class="group border-r border-b border-gray-200 p-7 flex flex-col gap-4 cursor-pointer hover:bg-gray-50 transition-colors">
+                <svg class="w-12 h-12" viewBox="0 0 64 64" fill="none" stroke="#1a1a1a" stroke-width="1.5">
+                    <path d="M16 52V30Q16 16 32 16Q48 16 48 30V52" />
+                    <line x1="8" y1="52" x2="56" y2="52" />
+                    <line x1="24" y1="38" x2="40" y2="38" />
+                </svg>
+                <span class="text-sm font-medium text-ink group-hover:text-red transition-colors">Diritto di
+                    Famiglia</span>
+            </div>
+            <div
+                class="group border-r border-b border-gray-200 p-7 flex flex-col gap-4 cursor-pointer hover:bg-gray-50 transition-colors">
+                <svg class="w-12 h-12" viewBox="0 0 64 64" fill="none" stroke="#1a1a1a" stroke-width="1.5">
+                    <rect x="14" y="10" width="36" height="46" rx="1" />
+                    <line x1="22" y1="24" x2="42" y2="24" />
+                    <line x1="22" y1="32" x2="42" y2="32" />
+                    <line x1="22" y1="40" x2="34" y2="40" />
+                </svg>
+                <span
+                    class="text-sm font-medium text-ink group-hover:text-red transition-colors">Contrattualistica</span>
+            </div>
+            <div
+                class="group border-r border-b border-gray-200 p-7 flex flex-col gap-4 cursor-pointer hover:bg-gray-50 transition-colors">
+                <svg class="w-12 h-12" viewBox="0 0 64 64" fill="none" stroke="#1a1a1a" stroke-width="1.5">
+                    <circle cx="22" cy="28" r="10" />
+                    <circle cx="44" cy="40" r="10" />
+                    <line x1="22" y1="38" x2="34" y2="40" />
+                </svg>
+                <span class="text-sm font-medium text-ink group-hover:text-red transition-colors">Mediazione e
+                    ADR</span>
+            </div>
+            <div
+                class="group border-r border-b border-gray-200 p-7 flex flex-col gap-4 cursor-pointer hover:bg-gray-50 transition-colors">
+                <svg class="w-12 h-12" viewBox="0 0 64 64" fill="none" stroke="#1a1a1a" stroke-width="1.5">
+                    <path d="M32 10 L54 22 L54 42 L32 54 L10 42 L10 22 Z" />
+                    <line x1="32" y1="10" x2="32" y2="54" />
+                    <line x1="10" y1="32" x2="54" y2="32" />
+                </svg>
+                <span class="text-sm font-medium text-ink group-hover:text-red transition-colors">Compliance</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════
+  "LAVORIAMO INSIEME" dark band
+═══════════════════════════ -->
+    <div class="bg-ink py-20 px-8 text-center">
+        <h2 class="text-3xl lg:text-5xl font-bold text-white mb-5">Lavoriamo insieme.</h2>
+        <p class="text-sm text-gray-400 max-w-md mx-auto mb-8 leading-relaxed">Quando assumiamo una rappresentanza ci
+            identifichiamo al cento per cento con il vostro caso e lo trattiamo come se fosse il nostro.</p>
+        <a href="#contact"
+            class="inline-block border-2 border-white text-white text-xs font-bold tracking-widest uppercase px-8 py-3.5 hover:bg-white hover:text-ink transition-colors duration-150">RICHIEDI
+            UNA CONSULENZA</a>
+    </div>
+
+
+    <!-- ═══════════════════════════
+  TEAM — horizontal scroll cards
+═══════════════════════════ -->
+    <section id="team">
+        <div class="max-w-screen-xl mx-auto px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-[180px_1fr] gap-10 mb-14">
+                <div class="text-xs font-bold tracking-widest uppercase text-red pt-1">Professionisti</div>
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-bold leading-snug text-ink">I vostri esperti:<br /><em
+                            class="font-light italic">un team ben coordinato</em></h2>
+                    <a href="#team"
+                        class="inline-flex items-center gap-2 mt-5 text-xs font-bold tracking-widest uppercase text-red hover:gap-4 transition-all duration-200">TUTTI
+                        I PROFESSIONISTI →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Horizontal scroll strip -->
+        <div class="flex gap-px bg-gray-200 overflow-x-auto pb-8 px-8 max-w-screen-xl mx-auto" id="team-scroll">
+            <!-- Card 1 -->
+            <div class="flex-shrink-0 w-64 bg-white border border-gray-200 overflow-hidden group">
+                <div class="overflow-hidden" style="aspect-ratio:4/5">
+                    <img src="https://placehold.co/600x400" alt="Avv. Antonello Arru"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div class="p-5">
+                    <p class="text-xs font-bold tracking-widest uppercase text-red mb-1">Fondatore · Cassazionista</p>
+                    <p class="font-semibold text-ink">Avv. Antonello Arru</p>
+                    <p class="text-xs text-gray-400 mt-1 leading-relaxed">Iscritto all'Albo di Cagliari dal
+                        21/11/1975<br />Diritto civile · Societario · Bancario</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="flex-shrink-0 w-64 bg-white border border-gray-200 overflow-hidden group">
+                <div class="overflow-hidden" style="aspect-ratio:4/5">
+                    <img src="https://placehold.co/600x400" alt="Avvocato"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div class="p-5">
+                    <p class="text-xs font-bold tracking-widest uppercase text-red mb-1">Avvocato</p>
+                    <p class="font-semibold text-ink">Avv. [Nome Figlia]</p>
+                    <p class="text-xs text-gray-400 mt-1 leading-relaxed">Diritto civile · Diritto di
+                        famiglia<br />Mediazione e ADR</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="flex-shrink-0 w-64 bg-white border border-gray-200 overflow-hidden group">
+                <div class="overflow-hidden" style="aspect-ratio:4/5">
+                    <img src="https://placehold.co/600x400" alt="Avvocato"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div class="p-5">
+                    <p class="text-xs font-bold tracking-widest uppercase text-red mb-1">Avvocato</p>
+                    <p class="font-semibold text-ink">Avv. [Nome Associato]</p>
+                    <p class="text-xs text-gray-400 mt-1 leading-relaxed">Diritto societario · Diritto
+                        bancario<br />Contenzioso civile</p>
+                </div>
+            </div>
+            <!-- Placeholder card -->
+            <div
+                class="flex-shrink-0 w-64 bg-gray-50 border border-gray-200 flex flex-col items-center justify-center gap-3 p-10">
+                <div
+                    class="w-14 h-14 rounded-full border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-300 text-2xl">
+                    +</div>
+                <p class="text-xs text-gray-300 text-center leading-relaxed">Collaboratori<br />e Of Counsel</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-200" />
+
+
+    <!-- ═══════════════════════════
+  VALORI
+═══════════════════════════ -->
+    <section id="valori" class="max-w-screen-xl mx-auto px-8 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-[180px_1fr] gap-10 mb-14">
+            <div class="text-xs font-bold tracking-widest uppercase text-red pt-1">Valori</div>
+            <div>
+                <h2 class="text-3xl lg:text-4xl font-bold leading-snug text-ink">I principi che<br /><em
+                        class="font-light italic">guidano il nostro lavoro.</em></h2>
+                <p class="mt-4 text-sm text-gray-500 leading-relaxed max-w-2xl">In un contesto giuridico sempre più
+                    complesso, i valori fondamentali dello studio rimangono immutati: competenza, riservatezza e
+                    dedizione totale al cliente.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 border-t border-l border-gray-200">
+            <div class="border-r border-b border-gray-200 p-10 hover:bg-gray-50 transition-colors">
+                <p class="text-xs font-bold tracking-widest uppercase text-red mb-3">01</p>
+                <h3 class="font-bold text-base text-ink mb-3">Competenza Specializzata</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">Cinquant'anni di attività forense hanno permesso di
+                    sviluppare una competenza tecnica verticale in diritto civile, societario e bancario. Ogni cliente
+                    riceve l'apporto del professionista più adatto alla sua esigenza specifica.</p>
+            </div>
+            <div class="border-r border-b border-gray-200 p-10 hover:bg-gray-50 transition-colors">
+                <p class="text-xs font-bold tracking-widest uppercase text-red mb-3">02</p>
+                <h3 class="font-bold text-base text-ink mb-3">Radici nel Territorio</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">Siamo profondamente legati alla Sardegna e al suo
+                    tessuto economico-istituzionale. Conoscere il territorio permette di offrire consulenza concreta,
+                    contestualizzata e davvero utile per i nostri clienti.</p>
+            </div>
+            <div class="border-r border-b border-gray-200 p-10 hover:bg-gray-50 transition-colors">
+                <p class="text-xs font-bold tracking-widest uppercase text-red mb-3">03</p>
+                <h3 class="font-bold text-base text-ink mb-3">Riservatezza e Fiducia</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">Ogni questione è trattata con la massima discrezione e
+                    serietà. Il rapporto con il cliente si fonda su un legame di assoluta fiducia professionale e
+                    personale, in un contesto familiare e di piena trasparenza.</p>
+            </div>
+            <div class="border-r border-b border-gray-200 p-10 hover:bg-gray-50 transition-colors">
+                <p class="text-xs font-bold tracking-widest uppercase text-red mb-3">04</p>
+                <h3 class="font-bold text-base text-ink mb-3">Dedizione Totale</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">Quando assumiamo una rappresentanza, ci identifichiamo
+                    al cento per cento con il vostro caso e lo trattiamo come se fosse il nostro. Il vostro risultato è
+                    il nostro obiettivo.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-200" />
+
+
+    <!-- ═══════════════════════════
+  NEWS
+═══════════════════════════ -->
+    <section id="news" class="max-w-screen-xl mx-auto px-8 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-[180px_1fr] gap-10 mb-14">
+            <div class="text-xs font-bold tracking-widest uppercase text-red pt-1">News</div>
+            <div class="flex items-start justify-between flex-wrap gap-4">
+                <h2 class="text-3xl lg:text-4xl font-bold leading-snug text-ink">Aggiornamenti e<br /><em
+                        class="font-light italic">approfondimenti.</em></h2>
+                <a href="#"
+                    class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-red hover:gap-4 transition-all duration-200 mt-2">TUTTI
+                    GLI ARTICOLI →</a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 border-t border-l border-gray-200">
+            <div class="border-r border-b border-gray-200 p-8 flex flex-col hover:bg-gray-50 transition-colors group">
+                <p class="text-xs font-bold tracking-widest uppercase text-red mb-3">Febbraio 2025</p>
+                <h3 class="font-bold text-base text-ink leading-snug mb-3">Riforma del processo civile: le novità
+                    operative per imprese e privati</h3>
+                <p class="text-sm text-gray-500 leading-relaxed flex-1 mb-5">Il D.lgs. 149/2022 ha introdotto modifiche
+                    significative al codice di procedura civile. Ecco una guida pratica ai principali cambiamenti.</p>
+                <a href="#"
+                    class="text-xs font-bold tracking-widest uppercase text-red inline-flex items-center gap-2 group-hover:gap-4 transition-all duration-200">LEGGI
+                    DI PIÙ →</a>
+            </div>
+            <div class="border-r border-b border-gray-200 p-8 flex flex-col hover:bg-gray-50 transition-colors group">
+                <p class="text-xs font-bold tracking-widest uppercase text-red mb-3">Dicembre 2024</p>
+                <h3 class="font-bold text-base text-ink leading-snug mb-3">Mediazione obbligatoria: estesa a nuove
+                    categorie di controversie</h3>
+                <p class="text-sm text-gray-500 leading-relaxed flex-1 mb-5">Con la riforma Cartabia la mediazione
+                    obbligatoria è stata ampliata. Scopri come lo studio può assisterti in questa fase pre-processuale.
+                </p>
+                <a href="#"
+                    class="text-xs font-bold tracking-widest uppercase text-red inline-flex items-center gap-2 group-hover:gap-4 transition-all duration-200">LEGGI
+                    DI PIÙ →</a>
+            </div>
+            <div class="border-r border-b border-gray-200 p-8 flex flex-col hover:bg-gray-50 transition-colors group">
+                <p class="text-xs font-bold tracking-widest uppercase text-red mb-3">Ottobre 2024</p>
+                <h3 class="font-bold text-base text-ink leading-snug mb-3">Successioni d'impresa in Sardegna: perché
+                    pianificare per tempo</h3>
+                <p class="text-sm text-gray-500 leading-relaxed flex-1 mb-5">Le aziende familiari sarde si trovano
+                    spesso impreparate di fronte al passaggio generazionale. Una pianificazione tempestiva evita
+                    contenziosi costosi.</p>
+                <a href="#"
+                    class="text-xs font-bold tracking-widest uppercase text-red inline-flex items-center gap-2 group-hover:gap-4 transition-all duration-200">LEGGI
+                    DI PIÙ →</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════
+  CONTACT SECTION
+═══════════════════════════ -->
+    <section id="contact">
+        <div class="max-w-screen-xl mx-auto px-8 pt-20 pb-4">
+            <div class="grid grid-cols-1 lg:grid-cols-[180px_1fr] gap-10 mb-12">
+                <div class="text-xs font-bold tracking-widest uppercase text-red pt-1">Contatti</div>
+                <h2 class="text-3xl lg:text-4xl font-bold leading-snug text-ink">Siamo pronti<br /><em
+                        class="font-light italic">ad ascoltarvi.</em></h2>
+            </div>
+        </div>
+
+        <!-- Two-col contact layout: info left (gray bg), form right (white) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 border-t border-gray-200">
+
+            <!-- Info -->
+            <div class="bg-gray-50 border-r border-gray-200 px-16 py-16">
+                <p class="text-sm text-gray-500 leading-relaxed mb-10">Lo Studio Legale Arru è a vostra disposizione per
+                    una prima consulenza. Contattateci telefonicamente o compilate il modulo: vi risponderemo entro 24
+                    ore lavorative.</p>
+                <div class="space-y-7">
+                    <div>
+                        <label class="block text-xs font-bold tracking-widest uppercase text-red mb-1">Indirizzo</label>
+                        <span class="text-sm text-ink">Via Fadda 5, 09125 Cagliari (CA)</span>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold tracking-widest uppercase text-red mb-1">Telefono</label>
+                        <a href="tel:+39070000000" class="text-sm text-ink hover:text-red transition-colors">+39 070 000
+                            000</a>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold tracking-widest uppercase text-red mb-1">Email</label>
+                        <a href="mailto:studio@arrulegale.it"
+                            class="text-sm text-ink hover:text-red transition-colors">studio@arrulegale.it</a>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold tracking-widest uppercase text-red mb-1">Orari</label>
+                        <span class="text-sm text-ink">Lunedì – Venerdì: 9:00 – 18:00</span>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold tracking-widest uppercase text-red mb-1">Albo</label>
+                        <span class="text-sm text-ink">Ordine degli Avvocati di Cagliari<br />Iscr. n° — dal
+                            21/11/1975</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="bg-white px-16 py-16">
+                <h3 class="text-xl font-bold text-ink mb-8">Richiedi una consulenza</h3>
+                <form id="cForm">
+                    <div class="grid grid-cols-2 gap-4 mb-5">
+                        <div>
+                            <label
+                                class="block text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Nome</label>
+                            <input type="text" placeholder="Mario"
+                                class="w-full border-0 border-b border-gray-200 bg-transparent py-2.5 text-sm text-ink placeholder-gray-300 focus:outline-none focus:border-red transition-colors" />
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Cognome</label>
+                            <input type="text" placeholder="Rossi"
+                                class="w-full border-0 border-b border-gray-200 bg-transparent py-2.5 text-sm text-ink placeholder-gray-300 focus:outline-none focus:border-red transition-colors" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mb-5">
+                        <div>
+                            <label
+                                class="block text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Email</label>
+                            <input type="email" placeholder="mario@email.com"
+                                class="w-full border-0 border-b border-gray-200 bg-transparent py-2.5 text-sm text-ink placeholder-gray-300 focus:outline-none focus:border-red transition-colors" />
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Telefono</label>
+                            <input type="tel" placeholder="+39 333 0000000"
+                                class="w-full border-0 border-b border-gray-200 bg-transparent py-2.5 text-sm text-ink placeholder-gray-300 focus:outline-none focus:border-red transition-colors" />
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <label class="block text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Area di
+                            interesse</label>
+                        <select
+                            class="w-full border-0 border-b border-gray-200 bg-transparent py-2.5 text-sm text-gray-500 focus:outline-none focus:border-red transition-colors cursor-pointer">
+                            <option value="">Seleziona un'area...</option>
+                            <option>Diritto Civile</option>
+                            <option>Diritto Societario</option>
+                            <option>Diritto Bancario e Finanziario</option>
+                            <option>Diritto Immobiliare</option>
+                            <option>Diritto di Famiglia e Successioni</option>
+                            <option>Contenzioso e Cassazione</option>
+                            <option>Mediazione e ADR</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label
+                            class="block text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Messaggio</label>
+                        <textarea rows="4" placeholder="Descrivi brevemente la tua situazione..."
+                            class="w-full border-0 border-b border-gray-200 bg-transparent py-2.5 text-sm text-ink placeholder-gray-300 focus:outline-none focus:border-red transition-colors resize-none"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-ink text-white text-xs font-bold tracking-widest uppercase py-4 hover:bg-red transition-colors duration-200">INVIA
+                        RICHIESTA →</button>
+                    <p id="form-ok" class="hidden text-center text-xs text-red tracking-wide mt-4">Grazie! Vi
+                        risponderemo entro 24 ore lavorative.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════
+  FOOTER
+═══════════════════════════ -->
+    <footer class="bg-ink pt-14 pb-8 px-8">
+        <div class="max-w-screen-xl mx-auto">
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white border-opacity-10">
+                <div>
+                    <div class="text-2xl font-bold uppercase tracking-wide text-white mb-4">Arru<span
+                            class="text-red">.</span></div>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-4">Studio legale boutique fondato a Cagliari nel
+                        1975. Diritto civile, societario e bancario in Sardegna con competenza e totale dedizione al
+                        cliente.</p>
+                    <p class="text-xs text-gray-600 leading-relaxed">Via Fadda 5, 09125 Cagliari (CA)<br />P.IVA
+                        [XXXXXXXXXX]<br />Ordine degli Avvocati di Cagliari</p>
+                </div>
+                <div>
+                    <h5 class="text-xs font-bold tracking-widest uppercase text-red mb-5">Practice</h5>
+                    <ul class="space-y-2.5">
+                        <li><a href="#practice" class="text-sm text-gray-500 hover:text-white transition-colors">Diritto
+                                Civile</a></li>
+                        <li><a href="#practice" class="text-sm text-gray-500 hover:text-white transition-colors">Diritto
+                                Societario</a></li>
+                        <li><a href="#practice" class="text-sm text-gray-500 hover:text-white transition-colors">Diritto
+                                Bancario</a></li>
+                        <li><a href="#practice" class="text-sm text-gray-500 hover:text-white transition-colors">Diritto
+                                Immobiliare</a></li>
+                        <li><a href="#practice"
+                                class="text-sm text-gray-500 hover:text-white transition-colors">Contenzioso</a></li>
+                        <li><a href="#practice"
+                                class="text-sm text-gray-500 hover:text-white transition-colors">Mediazione ADR</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xs font-bold tracking-widest uppercase text-red mb-5">Studio</h5>
+                    <ul class="space-y-2.5">
+                        <li><a href="#home" class="text-sm text-gray-500 hover:text-white transition-colors">Chi
+                                siamo</a></li>
+                        <li><a href="#team" class="text-sm text-gray-500 hover:text-white transition-colors">I
+                                Professionisti</a></li>
+                        <li><a href="#valori"
+                                class="text-sm text-gray-500 hover:text-white transition-colors">Valori</a></li>
+                        <li><a href="#settori"
+                                class="text-sm text-gray-500 hover:text-white transition-colors">Settori</a></li>
+                        <li><a href="#news" class="text-sm text-gray-500 hover:text-white transition-colors">News</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xs font-bold tracking-widest uppercase text-red mb-5">Contatti</h5>
+                    <ul class="space-y-2.5">
+                        <li><a href="tel:+39070000000"
+                                class="text-sm text-gray-500 hover:text-white transition-colors">+39 070 000 000</a>
+                        </li>
+                        <li><a href="mailto:studio@arrulegale.it"
+                                class="text-sm text-gray-500 hover:text-white transition-colors">studio@arrulegale.it</a>
+                        </li>
+                        <li><a href="#contact" class="text-sm text-gray-500 hover:text-white transition-colors">Prenota
+                                una consulenza</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pt-6">
+                <p class="text-xs text-gray-600">© 2025 Studio Legale Arru — Tutti i diritti riservati · Privacy Policy
+                </p>
+                <p class="text-xs text-gray-700">Avv. Antonello Arru · Cassazionista · Ordine Avvocati Cagliari · Iscr.
+                    21/11/1975</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        /* ── SLIDER ── */
+        const slides = [0, 1, 2].map(i => document.getElementById('img-' + i));
+        const dots = Array.from(document.querySelectorAll('.h-dot'));
+        const slideData = Array.from(document.querySelectorAll('#slide-data > div'));
+        let cur = 0, timer;
+
+        function renderSlide(i) {
+            const d = slideData[i].dataset;
+            document.getElementById('hero-tag').textContent = d.tag;
+            document.getElementById('hero-heading').innerHTML = d.heading;
+            document.getElementById('hero-sub').textContent = d.sub;
+            document.getElementById('hero-btn').textContent = d.btn;
+            document.getElementById('hero-btn').href = d.href;
+        }
+
+        function goTo(n) {
+            slides[cur].classList.replace('opacity-100', 'opacity-0');
+            dots[cur].classList.replace('bg-red', 'bg-gray-200');
+            cur = (n + slides.length) % slides.length;
+            slides[cur].classList.replace('opacity-0', 'opacity-100');
+            dots[cur].classList.replace('bg-gray-200', 'bg-red');
+            renderSlide(cur);
+        }
+
+        function play() { timer = setInterval(() => goTo(cur + 1), 5800); }
+        function reset() { clearInterval(timer); play(); }
+
+        document.getElementById('next').addEventListener('click', () => { goTo(cur + 1); reset(); });
+        document.getElementById('prev').addEventListener('click', () => { goTo(cur - 1); reset(); });
+        dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.i); reset(); }));
+
+        renderSlide(0);
+        play();
+
+        /* ── MOBILE NAV ── */
+        document.getElementById('hamburger').addEventListener('click', () =>
+            document.getElementById('mob-nav').classList.replace('hidden', 'flex'));
+        document.getElementById('mob-close').addEventListener('click', () =>
+            document.getElementById('mob-nav').classList.replace('flex', 'hidden'));
+        document.querySelectorAll('.mob-l').forEach(a =>
+            a.addEventListener('click', () => document.getElementById('mob-nav').classList.replace('flex', 'hidden')));
+
+        /* ── SMOOTH SCROLL ── */
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+
+        /* ── FORM ── */
+        document.getElementById('cForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const ok = document.getElementById('form-ok');
+            ok.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => ok.classList.add('hidden'), 7000);
+        });
+    </script>
+</body>
+
+</html>

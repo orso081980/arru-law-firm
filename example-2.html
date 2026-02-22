@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arru — Studio Legale | Cagliari</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --red: #c41e2a;
+      --dark: #111111;
+      --mid: #444;
+      --light: #f5f5f5;
+      --border: #e0e0e0;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ─── TOP BAR ─── */
+    .topbar {
+      background: var(--dark);
+      color: #fff;
+      font-size: .7rem;
+      letter-spacing: .08em;
+      padding: 0 48px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .topbar a {
+      color: rgba(255, 255, 255, .55);
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color .2s;
+    }
+
+    .topbar a:hover {
+      color: #fff;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .68rem;
+      color: rgba(255, 255, 255, .45);
+    }
+
+    .topbar-left strong {
+      color: #fff;
+    }
+
+    /* ─── NAVBAR ─── */
+    #navbar {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s;
+    }
+
+    #navbar.shadow {
+      box-shadow: 0 2px 20px rgba(0, 0, 0, .08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: stretch;
+      padding: 0 48px;
+      height: 64px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      margin-right: 52px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--dark);
+      text-decoration: none;
+      letter-spacing: .01em;
+    }
+
+    .logo-text span {
+      color: var(--red);
+    }
+
+    .logo-sub {
+      font-size: .6rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: 2px;
+      display: block;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: stretch;
+      flex: 1;
+      list-style: none;
+    }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-item>a {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 18px;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: color .2s, border-color .2s;
+      white-space: nowrap;
+    }
+
+    .nav-item>a:hover,
+    .nav-item.active>a {
+      color: var(--dark);
+      border-bottom-color: var(--red);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-left: auto;
+    }
+
+    .nav-contact {
+      background: var(--red);
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+
+    .nav-contact:hover {
+      background: #9e1821;
+    }
+
+    /* ─── MEGA MENU ─── */
+    .mega {
+      position: absolute;
+      top: calc(100% + 1px);
+      left: -24px;
+      background: #fff;
+      border-top: 3px solid var(--red);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .12);
+      min-width: 600px;
+      padding: 36px 40px;
+      display: none;
+      z-index: 300;
+    }
+
+    .nav-item:hover .mega {
+      display: flex;
+      gap: 48px;
+    }
+
+    .mega-col h4 {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mega-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .mega-col ul li a {
+      font-size: .8rem;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .mega-col ul li a:hover {
+      color: var(--red);
+    }
+
+    /* ─── HERO SLIDER ─── */
+    .hero {
+      position: relative;
+      height: 88vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .9s ease;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, .62) 0%, rgba(0, 0, 0, .25) 55%, rgba(0, 0, 0, .05) 100%);
+    }
+
+    .slide-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 64px 48px 72px;
+      max-width: 780px;
+    }
+
+    .slide-tag {
+      font-size: .65rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .6);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .slide-tag::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--red);
+      display: inline-block;
+    }
+
+    .slide-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+
+    .slide-title em {
+      font-style: italic;
+      color: rgba(255, 255, 255, .8);
+    }
+
+    .slide-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+
+    .slide-cta:hover {
+      background: #9e1821;
+    }
+
+    .slide-cta-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(255, 255, 255, .4);
+      color: rgba(255, 255, 255, .8);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      text-decoration: none;
+      margin-left: 12px;
+      transition: all .2s;
+    }
+
+    .slide-cta-ghost:hover {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    .hero-dots {
+      position: absolute;
+      bottom: 28px;
+      right: 48px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 28px;
+      height: 3px;
+      background: rgba(255, 255, 255, .35);
+      cursor: pointer;
+      transition: background .3s;
+    }
+
+    .dot.active {
+      background: var(--red);
+    }
+
+    .hero-arrows {
+      position: absolute;
+      bottom: 20px;
+      left: 48px;
+      display: flex;
+      gap: 4px;
+    }
+
+    .arrow-btn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255, 255, 255, .3);
+      background: rgba(0, 0, 0, .3);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all .2s;
+    }
+
+    .arrow-btn:hover {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    /* ─── INTRO STRIP ─── */
+    .intro-strip {
+      background: var(--light);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      overflow-x: auto;
+    }
+
+    .intro-item {
+      flex: 1;
+      min-width: 200px;
+      padding: 32px 36px;
+      border-right: 1px solid var(--border);
+    }
+
+    .intro-item:last-child {
+      border-right: none;
+    }
+
+    .intro-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1;
+    }
+
+    .intro-label {
+      font-size: .68rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: 6px;
+    }
+
+    /* ─── SECTION LAYOUT ─── */
+    .section {
+      padding: 88px 48px;
+    }
+
+    .section-sm {
+      padding: 64px 48px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-head {
+      margin-bottom: 52px;
+    }
+
+    .section-eyebrow {
+      font-size: .65rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      width: 22px;
+      height: 1px;
+      background: var(--red);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .section-title em {
+      font-style: italic;
+    }
+
+    /* ─── ABOUT ─── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img-wrap img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: var(--red);
+      color: #fff;
+      padding: 22px 30px;
+    }
+
+    .about-badge-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .about-badge-label {
+      font-size: .62rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-top: 4px;
+      opacity: .8;
+    }
+
+    .about-text p {
+      font-size: .93rem;
+      line-height: 1.85;
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    .about-text p:last-of-type {
+      margin-bottom: 28px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    .text-link:hover {
+      gap: 14px;
+    }
+
+    /* ─── PRACTICE ─── */
+    .practice-bg {
+      background: var(--dark);
+    }
+
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, .07);
+      margin-top: 52px;
+    }
+
+    .p-card {
+      background: var(--dark);
+      padding: 44px 36px;
+      transition: background .25s;
+      cursor: default;
+      position: relative;
+      border-bottom: 3px solid transparent;
+    }
+
+    .p-card:hover {
+      background: #1d1d1d;
+      border-bottom-color: var(--red);
+    }
+
+    .p-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: rgba(255, 255, 255, .05);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .p-title {
+      font-size: .95rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
+      letter-spacing: .01em;
+    }
+
+    .p-desc {
+      font-size: .8rem;
+      color: rgba(255, 255, 255, .42);
+      line-height: 1.75;
+    }
+
+    .p-arrow {
+      position: absolute;
+      bottom: 32px;
+      right: 28px;
+      color: var(--red);
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: all .25s;
+      font-size: .9rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+    }
+
+    .p-card:hover .p-arrow {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ─── TEAM ─── */
+    .team-bg {
+      background: var(--light);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 52px;
+      background: var(--border);
+    }
+
+    .t-card {
+      background: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .t-photo {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .t-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      filter: grayscale(20%);
+      transition: filter .4s, transform .5s;
+    }
+
+    .t-card:hover .t-photo img {
+      filter: grayscale(0%);
+      transform: scale(1.03);
+    }
+
+    .t-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, .55) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity .4s;
+    }
+
+    .t-card:hover .t-overlay {
+      opacity: 1;
+    }
+
+    .t-info {
+      padding: 24px 26px 28px;
+    }
+
+    .t-role {
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 6px;
+    }
+
+    .t-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--dark);
+    }
+
+    .t-spec {
+      font-size: .75rem;
+      color: #888;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* ─── VALUES ─── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      margin-top: 52px;
+    }
+
+    .v-item {
+      padding: 44px 40px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background .2s;
+    }
+
+    .v-item:hover {
+      background: var(--light);
+    }
+
+    .v-item:nth-child(2n) {
+      border-right: none;
+    }
+
+    .v-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--red);
+      margin-bottom: 14px;
+    }
+
+    .v-title {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 10px;
+      letter-spacing: .02em;
+    }
+
+    .v-desc {
+      font-size: .8rem;
+      color: #666;
+      line-height: 1.75;
+    }
+
+    /* ─── NEWS ─── */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+      margin-top: 52px;
+    }
+
+    .news-card {
+      background: #fff;
+      padding: 36px 32px;
+      transition: background .2s;
+    }
+
+    .news-card:hover {
+      background: var(--light);
+    }
+
+    .news-date {
+      font-size: .65rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 12px;
+    }
+
+    .news-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .news-excerpt {
+      font-size: .78rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .news-link {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    /* ─── CONTACT STRIP ─── */
+    .contact-strip {
+      background: var(--dark);
+      padding: 80px 48px;
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .c-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+      color: #fff;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 32px;
+    }
+
+    .c-items {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .c-row label {
+      font-size: .6rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--red);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .c-row p,
+    .c-row a {
+      font-size: .87rem;
+      color: rgba(255, 255, 255, .6);
+      text-decoration: none;
+    }
+
+    .c-row a:hover {
+      color: #fff;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-size: .62rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .4);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .12);
+      padding: 12px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: .85rem;
+      color: #fff;
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255, 255, 255, .2);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--red);
+    }
+
+    .form-group select {
+      cursor: pointer;
+      background: rgba(255, 255, 255, .06);
+      color: rgba(255, 255, 255, .6);
+    }
+
+    .form-group select option {
+      background: #222;
+      color: #fff;
+    }
+
+    .form-group textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    .form-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .btn-submit {
+      background: var(--red);
+      color: #fff;
+      border: none;
+      width: 100%;
+      padding: 15px;
+      font-family: 'Inter', sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .2s;
+      margin-top: 4px;
+    }
+
+    .btn-submit:hover {
+      background: #9e1821;
+    }
+
+    #form-thanks {
+      display: none;
+      text-align: center;
+      color: var(--red);
+      font-size: .8rem;
+      margin-top: 14px;
+      letter-spacing: .06em;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0a0a0a;
+      padding: 56px 48px 32px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .footer-logo-text span {
+      color: var(--red);
+    }
+
+    .footer-tagline {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .35);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .footer-col h5 {
+      font-size: .62rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .footer-col ul li a {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .4);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-copy {
+      font-size: .67rem;
+      color: rgba(255, 255, 255, .22);
+    }
+
+    .footer-albo {
+      font-size: .67rem;
+      color: rgba(255, 255, 255, .18);
+    }
+
+    /* ─── HAMBURGER + MOBILE NAV ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--dark);
+      transition: .3s;
+    }
+
+    #mob-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      z-index: 400;
+      flex-direction: column;
+      padding: 80px 32px 40px;
+      overflow-y: auto;
+    }
+
+    #mob-nav.open {
+      display: flex;
+    }
+
+    #mob-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--dark);
+    }
+
+    #mob-nav a {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--dark);
+      text-decoration: none;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #mob-nav a:hover {
+      color: var(--red);
+    }
+
+    #mob-nav .mob-cta {
+      background: var(--red);
+      color: #fff !important;
+      border: none;
+      padding: 14px 24px;
+      margin-top: 24px;
+      text-align: center;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* ─── REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:960px) {
+
+      .topbar,
+      .nav-menu,
+      .nav-right {
+        display: none;
+      }
+
+      .nav-inner {
+        justify-content: space-between;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-logo {
+        margin-right: 0;
+      }
+
+      .hero .slide-content {
+        padding: 40px 24px 60px;
+      }
+
+      .intro-strip {
+        flex-wrap: wrap;
+      }
+
+      .intro-item {
+        flex: 1 1 48%;
+      }
+
+      .section,
+      .section-sm {
+        padding: 56px 24px;
+      }
+
+      .contact-strip {
+        padding: 56px 24px;
+      }
+
+      footer {
+        padding: 40px 24px 24px;
+      }
+
+      .about-grid,
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .about-img-wrap img {
+        height: 360px;
+      }
+
+      .practice-grid,
+      .team-grid,
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .v-item:nth-child(2n) {
+        border-right: 1px solid var(--border);
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-dots {
+        right: 20px;
+      }
+
+      .hero-arrows {
+        left: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══ TOP BAR ══ -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <strong>Studio Legale Arru</strong>
+      <span>·</span>
+      <span>Via Fadda 5, Cagliari</span>
+    </div>
+    <div>
+      <a href="tel:+39070000000">+39 070 000 000</a>
+      <a href="mailto:studio@arrulegale.it">studio@arrulegale.it</a>
+      <a href="#contact" style="background:var(--red);padding:6px 14px;margin-left:16px;color:#fff;">Contatti</a>
+    </div>
+  </div>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <a href="#" class="logo-text">
+          Arru<span>.</span>
+          <span class="logo-sub">Studio Legale · Cagliari</span>
+        </a>
+      </div>
+
+      <ul class="nav-menu">
+        <!-- Practice dropdown -->
+        <li class="nav-item">
+          <a href="#practice">Practice ▾</a>
+          <div class="mega">
+            <div class="mega-col">
+              <h4>Aree di Diritto</h4>
+              <ul>
+                <li><a href="#practice">Diritto Civile</a></li>
+                <li><a href="#practice">Diritto Societario</a></li>
+                <li><a href="#practice">Diritto Bancario e Finanziario</a></li>
+                <li><a href="#practice">Diritto Immobiliare</a></li>
+                <li><a href="#practice">Mediazione e ADR</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h4>Contenzioso</h4>
+              <ul>
+                <li><a href="#practice">Rappresentanza in Cassazione</a></li>
+                <li><a href="#practice">Contenzioso Civile</a></li>
+                <li><a href="#practice">Contenzioso Bancario</a></li>
+                <li><a href="#practice">Diritto di Famiglia</a></li>
+                <li><a href="#practice">Successioni</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="#about">Lo Studio</a></li>
+        <li class="nav-item"><a href="#team">Professionisti</a></li>
+        <li class="nav-item"><a href="#values">Valori</a></li>
+        <li class="nav-item"><a href="#news">News</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#contact" class="nav-contact">Consulenza →</a>
+      </div>
+
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div id="mob-nav">
+    <button id="mob-close">×</button>
+    <a href="#about">Lo Studio</a>
+    <a href="#practice">Practice</a>
+    <a href="#team">Professionisti</a>
+    <a href="#values">Valori</a>
+    <a href="#news">News</a>
+    <a href="#contact" class="mob-cta">Richiedi Consulenza</a>
+  </div>
+
+
+  <!-- ══ HERO SLIDER ══ -->
+  <section class="hero" id="home">
+
+    <div class="slide active">
+      <img class="slide-img" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=85&fit=crop"
+        alt="Studio legale Cagliari" />
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <p class="slide-tag">Cagliari · dal 1975</p>
+        <h2 class="slide-title">
+          Cinquant'anni al servizio<br />del diritto e <em>dei cittadini sardi.</em>
+        </h2>
+        <a href="#about" class="slide-cta">Scopri lo Studio</a>
+        <a href="#contact" class="slide-cta-ghost">Prenota una consulenza</a>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img class="slide-img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=85&fit=crop"
+        alt="Diritto societario" />
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <p class="slide-tag">Aree di Pratica</p>
+        <h2 class="slide-title">
+          Diritto civile e societario<br /><em>di alto profilo</em> a Cagliari.
+        </h2>
+        <a href="#practice" class="slide-cta">Le nostre competenze</a>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img class="slide-img" src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1600&q=85&fit=crop"
+        alt="Il team" />
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <p class="slide-tag">Il Team</p>
+        <h2 class="slide-title">
+          Un team di famiglia,<br /><em>una competenza</em> senza confini.
+        </h2>
+        <a href="#team" class="slide-cta">I Professionisti</a>
+      </div>
+    </div>
+
+    <div class="hero-arrows">
+      <button class="arrow-btn" id="prev-slide">&#8592;</button>
+      <button class="arrow-btn" id="next-slide">&#8594;</button>
+    </div>
+
+    <div class="hero-dots">
+      <div class="dot active" data-i="0"></div>
+      <div class="dot" data-i="1"></div>
+      <div class="dot" data-i="2"></div>
+    </div>
+  </section>
+
+
+  <!-- ══ INTRO STRIP ══ -->
+  <div class="intro-strip">
+    <div class="intro-item">
+      <div class="intro-num">50+</div>
+      <div class="intro-label">Anni di attività</div>
+    </div>
+    <div class="intro-item">
+      <div class="intro-num">1975</div>
+      <div class="intro-label">Anno di fondazione</div>
+    </div>
+    <div class="intro-item">
+      <div class="intro-num">3</div>
+      <div class="intro-label">Avvocati in organico</div>
+    </div>
+    <div class="intro-item">
+      <div class="intro-num">Cassazionista</div>
+      <div class="intro-label">Massimo grado di rappresentanza</div>
+    </div>
+  </div>
+
+
+  <!-- ══ ABOUT ══ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&fit=crop"
+            alt="Studio Arru Cagliari" />
+          <div class="about-badge">
+            <div class="about-badge-year">1975</div>
+            <div class="about-badge-label">Fondazione</div>
+          </div>
+        </div>
+        <div class="about-text reveal" style="transition-delay:.12s">
+          <div class="section-head" style="margin-bottom:28px">
+            <p class="section-eyebrow">Lo Studio</p>
+            <h2 class="section-title">Una tradizione di<br /><em>eccellenza giuridica</em><br />in Sardegna.</h2>
+          </div>
+          <p>Lo Studio Legale Arru è uno dei punti di riferimento più consolidati del foro cagliaritano. Fondato nel
+            1975 dall'Avvocato Cassazionista Antonello Arru, opera da decenni con autorevolezza nel campo del diritto
+            civile e societario.</p>
+          <p>L'Avvocato Arru, originario del Nuorese e con studio in Via Fadda 5 a Cagliari, ha maturato una carriera di
+            altissimo profilo che lo ha portato a ricoprire la presidenza del Banco di Sardegna e della Fondazione Banco
+            di Sardegna — una testimonianza del profondo legame tra la sua attività forense e il tessuto
+            economico-istituzionale della Sardegna.</p>
+          <p>Oggi lo studio opera in forma associata con la figlia dell'Avvocato Arru e con un ulteriore professionista
+            di fiducia, coniugando l'esperienza cinquantennale del fondatore con energie nuove, in un ambiente familiare
+            e di assoluta serietà professionale.</p>
+          <a href="#team" class="text-link">Conosci il team →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ PRACTICE ══ -->
+  <section class="section practice-bg" id="practice">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow" style="color:var(--red)">Competenze</p>
+        <h2 class="section-title" style="color:#fff">Le nostre aree<br />di <em>pratica.</em></h2>
+      </div>
+      <div class="practice-grid reveal">
+        <div class="p-card">
+          <div class="p-num">01</div>
+          <div class="p-title">Diritto Civile</div>
+          <div class="p-desc">Responsabilità contrattuale ed extracontrattuale, diritto di famiglia, successioni e
+            controversie patrimoniali. Tutela piena in ogni fase processuale.</div>
+          <span class="p-arrow">LEGGI →</span>
+        </div>
+        <div class="p-card">
+          <div class="p-num">02</div>
+          <div class="p-title">Diritto Societario</div>
+          <div class="p-desc">Costituzione e governance di società, operazioni straordinarie, fusioni e acquisizioni.
+            Consulenza strategica per imprese sarde e nazionali.</div>
+          <span class="p-arrow">LEGGI →</span>
+        </div>
+        <div class="p-card">
+          <div class="p-num">03</div>
+          <div class="p-title">Diritto Bancario e Finanziario</div>
+          <div class="p-desc">Contenzioso bancario, contratti di credito, garanzie reali e personali. Competenza
+            consolidata ai massimi livelli del sistema creditizio sardo.</div>
+          <span class="p-arrow">LEGGI →</span>
+        </div>
+        <div class="p-card">
+          <div class="p-num">04</div>
+          <div class="p-title">Contenzioso e Cassazione</div>
+          <div class="p-desc">Rappresentanza in ogni grado di giudizio, inclusa la Corte di Cassazione. Strategia
+            processuale di alto livello e lunga esperienza forense.</div>
+          <span class="p-arrow">LEGGI →</span>
+        </div>
+        <div class="p-card">
+          <div class="p-num">05</div>
+          <div class="p-title">Diritto Immobiliare</div>
+          <div class="p-desc">Compravendite, locazioni, appalti, urbanistica e condominio. Assistenza completa nelle
+            operazioni immobiliari di ogni complessità.</div>
+          <span class="p-arrow">LEGGI →</span>
+        </div>
+        <div class="p-card">
+          <div class="p-num">06</div>
+          <div class="p-title">Mediazione e ADR</div>
+          <div class="p-desc">Risoluzione alternativa delle controversie, mediazione civile e commerciale, negoziazione
+            assistita per soluzioni rapide ed efficaci.</div>
+          <span class="p-arrow">LEGGI →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ TEAM ══ -->
+  <section class="section-sm team-bg" id="team">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Professionisti</p>
+        <h2 class="section-title">I nostri<br /><em>avvocati.</em></h2>
+      </div>
+      <div class="team-grid reveal">
+        <div class="t-card">
+          <div class="t-photo">
+            <img src="https://placehold.co/600x400" alt="Avv. Antonello Arru" />
+            <div class="t-overlay"></div>
+          </div>
+          <div class="t-info">
+            <div class="t-role">Fondatore · Avvocato Cassazionista</div>
+            <div class="t-name">Avv. Antonello Arru</div>
+            <div class="t-spec">Iscritto all'Albo di Cagliari dal 21/11/1975<br />Diritto civile · Diritto societario ·
+              Diritto bancario</div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-photo">
+            <img src="https://placehold.co/600x400" alt="Avvocato" />
+            <div class="t-overlay"></div>
+          </div>
+          <div class="t-info">
+            <div class="t-role">Avvocato</div>
+            <div class="t-name">Avv. [Nome Figlia]</div>
+            <div class="t-spec">Diritto civile · Diritto di famiglia<br />Mediazione e ADR</div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-photo">
+            <img src="https://placehold.co/600x400" alt="Avvocato" />
+            <div class="t-overlay"></div>
+          </div>
+          <div class="t-info">
+            <div class="t-role">Avvocato</div>
+            <div class="t-name">Avv. [Nome Associato]</div>
+            <div class="t-spec">Diritto societario · Diritto bancario<br />Contenzioso civile</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ VALUES ══ -->
+  <section class="section" id="values">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Valori</p>
+        <h2 class="section-title">I principi che<br /><em>guidano il nostro lavoro.</em></h2>
+      </div>
+      <div class="values-grid reveal">
+        <div class="v-item">
+          <div class="v-num">01</div>
+          <div class="v-title">Competenza e Specializzazione</div>
+          <div class="v-desc">Cinquant'anni di attività forense ci hanno permesso di sviluppare una competenza tecnica
+            profonda e verticale. La specializzazione è la nostra forza: ogni cliente riceve l'apporto del
+            professionista più adatto alla sua esigenza specifica.</div>
+        </div>
+        <div class="v-item">
+          <div class="v-num">02</div>
+          <div class="v-title">Radici nel Territorio</div>
+          <div class="v-desc">Siamo profondamente legati alla Sardegna e alla sua comunità economica e istituzionale.
+            Conoscere il territorio significa offrire consulenza concreta, contestualizzata e davvero utile per i nostri
+            clienti sardi e non solo.</div>
+        </div>
+        <div class="v-item">
+          <div class="v-num">03</div>
+          <div class="v-title">Riservatezza e Fiducia</div>
+          <div class="v-desc">La relazione con il cliente si fonda su un rapporto di assoluta fiducia e massima
+            discrezione. Ogni questione viene trattata con la serietà e la riservatezza che merita, in un contesto
+            familiare e umano.</div>
+        </div>
+        <div class="v-item">
+          <div class="v-num">04</div>
+          <div class="v-title">Continuità e Innovazione</div>
+          <div class="v-desc">La solidità di una tradizione cinquantennale si unisce a energie nuove: lo studio evolve
+            con il tempo senza perdere i valori fondanti. Tradizione e innovazione non sono opposti, ma complementari.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ NEWS ══ -->
+  <section class="section-sm" style="background:var(--light)" id="news">
+    <div class="container">
+      <div class="section-head reveal"
+        style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
+        <div>
+          <p class="section-eyebrow">Aggiornamenti</p>
+          <h2 class="section-title">News e<br /><em>approfondimenti.</em></h2>
+        </div>
+        <a href="#" class="text-link" style="margin-bottom:4px">Tutti gli articoli →</a>
+      </div>
+      <div class="news-grid reveal">
+        <div class="news-card">
+          <div class="news-date">Gennaio 2025</div>
+          <div class="news-title">Riforma del processo civile: cosa cambia per imprese e privati</div>
+          <div class="news-excerpt">Le recenti novità legislative in materia di procedura civile impongono una revisione
+            delle strategie processuali. Ecco una guida pratica ai principali cambiamenti.</div>
+          <a href="#" class="news-link">Leggi →</a>
+        </div>
+        <div class="news-card">
+          <div class="news-date">Novembre 2024</div>
+          <div class="news-title">Mediazione obbligatoria: estesa a nuove categorie di controversie</div>
+          <div class="news-excerpt">Con il decreto legislativo n. 149/2022, la mediazione obbligatoria è stata estesa ad
+            un numero crescente di materie. Scopri come lo studio può assisterti.</div>
+          <a href="#" class="news-link">Leggi →</a>
+        </div>
+        <div class="news-card">
+          <div class="news-date">Settembre 2024</div>
+          <div class="news-title">Successioni d'impresa in Sardegna: pianificare per tempo</div>
+          <div class="news-excerpt">Le aziende familiari sarde si trovano spesso impreparate di fronte al passaggio
+            generazionale. Una pianificazione successoria tempestiva può evitare contenziosi costosi.</div>
+          <a href="#" class="news-link">Leggi →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ CONTACT ══ -->
+  <div class="contact-strip" id="contact">
+    <div class="contact-inner">
+      <div class="reveal">
+        <div class="section-eyebrow" style="color:var(--red)">Contatti</div>
+        <h2 class="c-title">Pronti a<br /><em style="font-style:italic">ascoltarvi.</em></h2>
+        <div class="c-items">
+          <div class="c-row">
+            <label>Indirizzo</label>
+            <p>Via Fadda 5, 09125 Cagliari (CA)</p>
+          </div>
+          <div class="c-row">
+            <label>Telefono</label>
+            <a href="tel:+39070000000">+39 070 000 000</a>
+          </div>
+          <div class="c-row">
+            <label>Email</label>
+            <a href="mailto:studio@arrulegale.it">studio@arrulegale.it</a>
+          </div>
+          <div class="c-row">
+            <label>Orari</label>
+            <p>Lunedì – Venerdì: 9:00 – 18:00</p>
+          </div>
+          <div class="c-row">
+            <label>Albo</label>
+            <p>Ordine degli Avvocati di Cagliari<br />Iscr. n° — dal 21/11/1975</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:.1s">
+        <h3
+          style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;color:#fff;margin-bottom:28px;">
+          Richiedi una consulenza</h3>
+        <form id="cForm">
+          <div class="form-2col">
+            <div class="form-group">
+              <label>Nome</label>
+              <input type="text" placeholder="Mario" />
+            </div>
+            <div class="form-group">
+              <label>Cognome</label>
+              <input type="text" placeholder="Rossi" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="mario.rossi@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Telefono</label>
+            <input type="tel" placeholder="+39 333 000 0000" />
+          </div>
+          <div class="form-group">
+            <label>Area di interesse</label>
+            <select>
+              <option value="">Seleziona...</option>
+              <option>Diritto Civile</option>
+              <option>Diritto Societario</option>
+              <option>Diritto Bancario e Finanziario</option>
+              <option>Contenzioso e Cassazione</option>
+              <option>Diritto Immobiliare</option>
+              <option>Mediazione e ADR</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Messaggio</label>
+            <textarea placeholder="Descrivi brevemente la tua situazione..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Invia Richiesta →</button>
+          <p id="form-thanks">Grazie! Vi risponderemo entro 24 ore lavorative.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <a href="#" class="footer-logo-text">Arru<span>.</span></a>
+        <p class="footer-tagline">Studio Legale fondato nel 1975 a Cagliari. Diritto civile e societario in Sardegna con
+          esperienza, riservatezza e dedizione.</p>
+        <p style="font-size:.67rem;color:rgba(255,255,255,.2);">Via Fadda 5, 09125 Cagliari (CA)<br />P.IVA [XXXXXXXXXX]
+        </p>
+      </div>
+      <div class="footer-col">
+        <h5>Aree di Pratica</h5>
+        <ul>
+          <li><a href="#practice">Diritto Civile</a></li>
+          <li><a href="#practice">Diritto Societario</a></li>
+          <li><a href="#practice">Diritto Bancario</a></li>
+          <li><a href="#practice">Contenzioso</a></li>
+          <li><a href="#practice">Diritto Immobiliare</a></li>
+          <li><a href="#practice">Mediazione e ADR</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="#about">Lo Studio</a></li>
+          <li><a href="#team">I Professionisti</a></li>
+          <li><a href="#values">Valori</a></li>
+          <li><a href="#news">News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contatti</h5>
+        <ul>
+          <li><a href="tel:+39070000000">+39 070 000 000</a></li>
+          <li><a href="mailto:studio@arrulegale.it">studio@arrulegale.it</a></li>
+          <li><a href="#contact">Prenota una consulenza</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Studio Legale Arru — Tutti i diritti riservati</span>
+      <span class="footer-albo">Avv. Antonello Arru · Cassazionista · Ordine degli Avvocati di Cagliari · Iscr.
+        21/11/1975</span>
+    </div>
+  </footer>
+
+
+  <script>
+    // ─── SLIDER ───
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let cur = 0, timer;
+
+    function goTo(n) {
+      slides[cur].classList.remove('active');
+      dots[cur].classList.remove('active');
+      cur = (n + slides.length) % slides.length;
+      slides[cur].classList.add('active');
+      dots[cur].classList.add('active');
+    }
+
+    function autoplay() { timer = setInterval(() => goTo(cur + 1), 5500); }
+
+    document.getElementById('next-slide').onclick = () => { clearInterval(timer); goTo(cur + 1); autoplay(); };
+    document.getElementById('prev-slide').onclick = () => { clearInterval(timer); goTo(cur - 1); autoplay(); };
+    dots.forEach(d => d.addEventListener('click', () => { clearInterval(timer); goTo(+d.dataset.i); autoplay(); }));
+    autoplay();
+
+    // ─── NAVBAR ───
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => nav.classList.toggle('shadow', window.scrollY > 40));
+
+    // ─── MOBILE NAV ───
+    document.getElementById('hamburger').onclick = () => document.getElementById('mob-nav').classList.add('open');
+    document.getElementById('mob-close').onclick = () => document.getElementById('mob-nav').classList.remove('open');
+    document.querySelectorAll('#mob-nav a').forEach(a => a.addEventListener('click', () => document.getElementById('mob-nav').classList.remove('open')));
+
+    // ─── SMOOTH SCROLL ───
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    // ─── REVEAL ───
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ─── FORM ───
+    document.getElementById('cForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const t = document.getElementById('form-thanks');
+      t.style.display = 'block';
+      e.target.reset();
+      setTimeout(() => t.style.display = 'none', 7000);
+    });
+  </script>
+</body>
+
+</html>

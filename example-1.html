@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Legale Arru — Cagliari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --ink: #1a1410;
+            --stone: #c8b99a;
+            --parchment: #f5f0e8;
+            --warm-white: #faf8f4;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background-color: var(--warm-white);
+            color: var(--ink);
+        }
+
+        h1,
+        h2,
+        h3,
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Nav */
+        #navbar {
+            transition: background 0.4s, box-shadow 0.4s;
+        }
+
+        #navbar.scrolled {
+            background: rgba(250, 248, 244, 0.97);
+            box-shadow: 0 1px 0 rgba(26, 20, 16, 0.08);
+        }
+
+        /* Hero */
+        .hero-bg {
+            background-color: var(--ink);
+            background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80&fit=crop');
+            background-size: cover;
+            background-position: center 30%;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(26, 20, 16, 0.88) 0%, rgba(26, 20, 16, 0.55) 60%, rgba(26, 20, 16, 0.2) 100%);
+        }
+
+        /* Divider line */
+        .ornament::before,
+        .ornament::after {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 1px;
+            background: var(--stone);
+            vertical-align: middle;
+            margin: 0 12px;
+        }
+
+        /* Practice card hover */
+        .practice-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .practice-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(26, 20, 16, 0.1);
+        }
+
+        /* Team photo placeholder */
+        .photo-placeholder {
+            background-color: #d4c8b5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Fade-in on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile menu */
+        #mobile-menu {
+            transition: max-height 0.35s ease, opacity 0.35s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        #mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══════════════════ NAVBAR ══════════════════ -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-16 py-5 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#home" class="flex flex-col leading-none">
+            <span class="serif text-xl font-semibold tracking-wide text-[var(--warm-white)]" id="nav-logo">Studio
+                Legale</span>
+            <span class="serif text-2xl font-light italic text-[var(--stone)]" id="nav-logo-sub">Arru</span>
+        </a>
+
+        <!-- Desktop Links -->
+        <ul class="hidden md:flex items-center gap-8 text-sm tracking-widest uppercase text-[var(--parchment)]"
+            id="nav-links">
+            <li><a href="#about" class="hover:text-[var(--stone)] transition-colors">Lo Studio</a></li>
+            <li><a href="#practice" class="hover:text-[var(--stone)] transition-colors">Aree di Pratica</a></li>
+            <li><a href="#team" class="hover:text-[var(--stone)] transition-colors">Il Team</a></li>
+            <li><a href="#contact" class="hover:text-[var(--stone)] transition-colors">Contatti</a></li>
+            <li>
+                <a href="#contact"
+                    class="border border-[var(--stone)] text-[var(--stone)] px-5 py-2 hover:bg-[var(--stone)] hover:text-[var(--ink)] transition-all">
+                    Consulenza
+                </a>
+            </li>
+        </ul>
+
+        <!-- Hamburger -->
+        <button id="hamburger" class="md:hidden flex flex-col gap-1.5 z-50" aria-label="Menu">
+            <span class="block w-6 h-0.5 bg-[var(--parchment)] transition-all" id="h1"></span>
+            <span class="block w-6 h-0.5 bg-[var(--parchment)] transition-all" id="h2"></span>
+            <span class="block w-4 h-0.5 bg-[var(--parchment)] transition-all" id="h3"></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 left-0 right-0 z-40 bg-[var(--ink)] pt-24 pb-10 px-8">
+        <ul class="flex flex-col gap-6 text-[var(--parchment)] text-lg tracking-widest uppercase">
+            <li><a href="#about" class="mobile-link hover:text-[var(--stone)] transition-colors">Lo Studio</a></li>
+            <li><a href="#practice" class="mobile-link hover:text-[var(--stone)] transition-colors">Aree di Pratica</a>
+            </li>
+            <li><a href="#team" class="mobile-link hover:text-[var(--stone)] transition-colors">Il Team</a></li>
+            <li><a href="#contact" class="mobile-link hover:text-[var(--stone)] transition-colors">Contatti</a></li>
+            <li><a href="#contact"
+                    class="mobile-link inline-block border border-[var(--stone)] text-[var(--stone)] px-6 py-3 mt-2 hover:bg-[var(--stone)] hover:text-[var(--ink)] transition-all">Consulenza</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- ══════════════════ HERO ══════════════════ -->
+    <section id="home" class="hero-bg min-h-screen flex items-end">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 px-8 lg:px-20 pb-24 md:pb-32 max-w-4xl">
+            <p class="text-[var(--stone)] tracking-[0.3em] uppercase text-xs mb-6 ornament">dal 1975</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl text-white font-light leading-none mb-4">
+                Avv. Antonello<br /><span class="italic font-extralight text-[var(--stone)]">Arru</span>
+            </h1>
+            <p class="text-[var(--parchment)] text-lg md:text-xl font-light max-w-lg mt-6 mb-10 leading-relaxed">
+                Avvocato Cassazionista. Diritto civile e societario.<br />
+                <span class="text-[var(--stone)]">Via Fadda 5, Cagliari.</span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#contact"
+                    class="bg-[var(--stone)] text-[var(--ink)] px-8 py-4 text-sm tracking-widest uppercase font-medium hover:bg-white transition-colors">
+                    Prenota una Consulenza
+                </a>
+                <a href="#about"
+                    class="border border-white text-white px-8 py-4 text-sm tracking-widest uppercase hover:bg-white hover:text-[var(--ink)] transition-colors">
+                    Scopri lo Studio
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════ STATS BAR ══════════════════ -->
+    <div class="bg-[var(--ink)] text-[var(--parchment)] py-8 px-8 lg:px-20">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <p class="serif text-4xl text-[var(--stone)]">50+</p>
+                <p class="text-xs tracking-widest uppercase mt-1 opacity-60">Anni di Attività</p>
+            </div>
+            <div>
+                <p class="serif text-4xl text-[var(--stone)]">1975</p>
+                <p class="text-xs tracking-widest uppercase mt-1 opacity-60">Anno di Fondazione</p>
+            </div>
+            <div>
+                <p class="serif text-4xl text-[var(--stone)]">3</p>
+                <p class="text-xs tracking-widest uppercase mt-1 opacity-60">Professionisti</p>
+            </div>
+            <div>
+                <p class="serif text-4xl text-[var(--stone)]">Cagliari</p>
+                <p class="text-xs tracking-widest uppercase mt-1 opacity-60">Sede</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ══════════════════ ABOUT ══════════════════ -->
+    <section id="about" class="py-24 lg:py-36 px-8 lg:px-20">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+            <!-- Image block -->
+            <div class="reveal relative">
+                <div class="photo-placeholder w-full aspect-[3/4] rounded-none">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80&fit=crop"
+                        alt="Studio legale" class="w-full h-full object-cover" />
+                </div>
+                <!-- Floating accent -->
+                <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-[var(--stone)] opacity-20 -z-10"></div>
+                <div class="absolute -top-4 -left-4 border border-[var(--stone)] w-24 h-24 -z-10"></div>
+            </div>
+
+            <!-- Text -->
+            <div class="reveal">
+                <p class="text-[var(--stone)] tracking-[0.25em] uppercase text-xs mb-4">Lo Studio</p>
+                <h2 class="serif text-4xl md:text-5xl font-light leading-tight mb-8">
+                    Una tradizione di<br /><em>eccellenza giuridica</em><br />a Cagliari
+                </h2>
+                <div class="w-12 h-0.5 bg-[var(--stone)] mb-8"></div>
+                <p class="text-[var(--ink)] opacity-70 leading-relaxed mb-5">
+                    Lo Studio Legale Arru è un punto di riferimento del foro cagliaritano dal 1975. Fondato
+                    dall'Avvocato Cassazionista Antonello Arru, lo studio opera principalmente nel diritto civile e
+                    societario con una visione moderna e orientata al cliente.
+                </p>
+                <p class="text-[var(--ink)] opacity-70 leading-relaxed mb-8">
+                    Nel corso di oltre mezzo secolo di attività, lo studio ha maturato una consolidata esperienza nel
+                    settore bancario e finanziario, affiancando imprese, istituzioni e privati nelle sfide più
+                    complesse. Oggi, con la partecipazione della figlia dell'Avvocato Arru e di un ulteriore
+                    professionista di fiducia, lo studio continua a offrire consulenza d'alto profilo in un contesto
+                    umano e familiare.
+                </p>
+                <a href="#team"
+                    class="text-[var(--ink)] text-sm tracking-widest uppercase border-b border-[var(--stone)] pb-1 hover:text-[var(--stone)] transition-colors">
+                    Conosci il Team →
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════ QUOTE BREAK ══════════════════ -->
+    <section class="bg-[var(--parchment)] py-20 px-8 lg:px-20 text-center">
+        <div class="max-w-3xl mx-auto reveal">
+            <p class="serif text-3xl md:text-4xl font-light italic text-[var(--ink)] leading-relaxed">
+                "Il diritto non è soltanto tecnica. È la forma più alta di rispetto verso la persona."
+            </p>
+            <p class="mt-6 text-[var(--stone)] tracking-widest text-xs uppercase">— Avv. Antonello Arru</p>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════ PRACTICE AREAS ══════════════════ -->
+    <section id="practice" class="py-24 lg:py-36 px-8 lg:px-20 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <p class="text-[var(--stone)] tracking-[0.25em] uppercase text-xs mb-4">Competenze</p>
+                <h2 class="serif text-4xl md:text-5xl font-light">Aree di Pratica</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Card 1 -->
+                <div class="practice-card bg-[var(--warm-white)] p-8 reveal">
+                    <div class="w-10 h-0.5 bg-[var(--stone)] mb-6"></div>
+                    <h3 class="serif text-2xl font-light mb-4">Diritto Civile</h3>
+                    <p class="text-sm opacity-60 leading-relaxed">
+                        Tutela contrattuale, responsabilità civile, diritto di famiglia, successioni e controversie
+                        patrimoniali. Un approccio rigoroso per la risoluzione di ogni conflitto.
+                    </p>
+                    <p class="mt-6 text-[var(--stone)] text-xs tracking-widest uppercase">Scopri →</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="practice-card bg-[var(--ink)] p-8 reveal" style="transition-delay: 0.1s">
+                    <div class="w-10 h-0.5 bg-[var(--stone)] mb-6"></div>
+                    <h3 class="serif text-2xl font-light mb-4 text-white">Diritto Societario</h3>
+                    <p class="text-sm text-[var(--parchment)] opacity-70 leading-relaxed">
+                        Costituzione e gestione di società, operazioni straordinarie, governance aziendale, fusioni e
+                        acquisizioni. Consulenza strategica per imprese sarde e nazionali.
+                    </p>
+                    <p class="mt-6 text-[var(--stone)] text-xs tracking-widest uppercase">Scopri →</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="practice-card bg-[var(--warm-white)] p-8 reveal" style="transition-delay: 0.2s">
+                    <div class="w-10 h-0.5 bg-[var(--stone)] mb-6"></div>
+                    <h3 class="serif text-2xl font-light mb-4">Diritto Bancario</h3>
+                    <p class="text-sm opacity-60 leading-relaxed">
+                        Contenzioso bancario, contratti finanziari, credito e garanzie. Competenza consolidata maturata
+                        ai massimi livelli del sistema creditizio sardo.
+                    </p>
+                    <p class="mt-6 text-[var(--stone)] text-xs tracking-widest uppercase">Scopri →</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="practice-card bg-[var(--warm-white)] p-8 reveal" style="transition-delay: 0.0s">
+                    <div class="w-10 h-0.5 bg-[var(--stone)] mb-6"></div>
+                    <h3 class="serif text-2xl font-light mb-4">Contenzioso</h3>
+                    <p class="text-sm opacity-60 leading-relaxed">
+                        Rappresentanza nelle fasi giudiziali di ogni grado, inclusa la Corte di Cassazione. Strategia
+                        processuale matura e consolidata.
+                    </p>
+                    <p class="mt-6 text-[var(--stone)] text-xs tracking-widest uppercase">Scopri →</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="practice-card bg-[var(--warm-white)] p-8 reveal" style="transition-delay: 0.1s">
+                    <div class="w-10 h-0.5 bg-[var(--stone)] mb-6"></div>
+                    <h3 class="serif text-2xl font-light mb-4">Diritto Immobiliare</h3>
+                    <p class="text-sm opacity-60 leading-relaxed">
+                        Compravendite, locazioni, contratti di appalto, condominio e urbanistica. Assistenza nelle
+                        operazioni immobiliari di ogni complessità.
+                    </p>
+                    <p class="mt-6 text-[var(--stone)] text-xs tracking-widest uppercase">Scopri →</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="practice-card bg-[var(--warm-white)] p-8 reveal" style="transition-delay: 0.2s">
+                    <div class="w-10 h-0.5 bg-[var(--stone)] mb-6"></div>
+                    <h3 class="serif text-2xl font-light mb-4">Mediazione e ADR</h3>
+                    <p class="text-sm opacity-60 leading-relaxed">
+                        Risoluzione alternativa delle controversie per soluzioni rapide ed efficienti. Negoziazione e
+                        mediazione civile e commerciale.
+                    </p>
+                    <p class="mt-6 text-[var(--stone)] text-xs tracking-widest uppercase">Scopri →</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════ TEAM ══════════════════ -->
+    <section id="team" class="py-24 lg:py-36 px-8 lg:px-20 bg-[var(--warm-white)]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <p class="text-[var(--stone)] tracking-[0.25em] uppercase text-xs mb-4">Professionisti</p>
+                <h2 class="serif text-4xl md:text-5xl font-light">Il Team</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+
+                <!-- Member 1 -->
+                <div class="reveal group text-center">
+                    <div class="photo-placeholder aspect-[3/4] mb-6 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Avv. Antonello Arru"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <p class="text-[var(--stone)] text-xs tracking-widest uppercase mb-1">Fondatore</p>
+                    <h3 class="serif text-2xl font-light">Avv. Antonello Arru</h3>
+                    <p class="text-sm opacity-50 mt-2">Avvocato Cassazionista · Iscritto dal 1975</p>
+                    <div class="w-8 h-0.5 bg-[var(--stone)] mx-auto mt-4"></div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="reveal group text-center" style="transition-delay: 0.15s">
+                    <div class="photo-placeholder aspect-[3/4] mb-6 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Avv. Arru"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <p class="text-[var(--stone)] text-xs tracking-widest uppercase mb-1">Avvocato</p>
+                    <h3 class="serif text-2xl font-light">Avv. [Nome Figlia]</h3>
+                    <p class="text-sm opacity-50 mt-2">Diritto Civile e di Famiglia</p>
+                    <div class="w-8 h-0.5 bg-[var(--stone)] mx-auto mt-4"></div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="reveal group text-center" style="transition-delay: 0.3s">
+                    <div class="photo-placeholder aspect-[3/4] mb-6 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Avvocato"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <p class="text-[var(--stone)] text-xs tracking-widest uppercase mb-1">Avvocato</p>
+                    <h3 class="serif text-2xl font-light">Avv. [Nome Associato]</h3>
+                    <p class="text-sm opacity-50 mt-2">Diritto Societario e Bancario</p>
+                    <div class="w-8 h-0.5 bg-[var(--stone)] mx-auto mt-4"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════ CONTACT ══════════════════ -->
+    <section id="contact" class="py-24 lg:py-36 px-8 lg:px-20 bg-[var(--ink)] text-[var(--parchment)]">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
+
+            <!-- Info -->
+            <div class="reveal">
+                <p class="text-[var(--stone)] tracking-[0.25em] uppercase text-xs mb-4">Contatti</p>
+                <h2 class="serif text-4xl md:text-5xl font-light text-white mb-10 leading-snug">
+                    Siamo a<br /><em class="text-[var(--stone)]">Cagliari</em><br />per voi.
+                </h2>
+
+                <div class="space-y-6 text-sm opacity-70">
+                    <div>
+                        <p class="text-[var(--stone)] text-xs tracking-widest uppercase mb-1">Indirizzo</p>
+                        <p>Via Fadda 5, 09125 Cagliari (CA)</p>
+                    </div>
+                    <div>
+                        <p class="text-[var(--stone)] text-xs tracking-widest uppercase mb-1">Telefono</p>
+                        <p><a href="tel:+39070000000" class="hover:text-[var(--stone)] transition-colors">+39 070 000
+                                000</a></p>
+                    </div>
+                    <div>
+                        <p class="text-[var(--stone)] text-xs tracking-widest uppercase mb-1">Email</p>
+                        <p><a href="mailto:studio@arrulegale.it"
+                                class="hover:text-[var(--stone)] transition-colors">studio@arrulegale.it</a></p>
+                    </div>
+                    <div>
+                        <p class="text-[var(--stone)] text-xs tracking-widest uppercase mb-1">Orari</p>
+                        <p>Lun – Ven: 9:00 – 18:00</p>
+                    </div>
+                </div>
+
+                <!-- Map embed placeholder -->
+                <div
+                    class="mt-10 aspect-video bg-[#2a221a] flex items-center justify-center opacity-60 text-xs tracking-widest uppercase">
+                    [Mappa — Via Fadda 5, Cagliari]
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="reveal" style="transition-delay: 0.15s">
+                <h3 class="serif text-2xl font-light text-white mb-8">Richiedi una consulenza</h3>
+                <form class="space-y-5" onsubmit="handleForm(event)">
+                    <div class="grid grid-cols-2 gap-5">
+                        <div>
+                            <label class="text-xs tracking-widest uppercase opacity-50 block mb-2">Nome</label>
+                            <input type="text" placeholder="Mario"
+                                class="w-full bg-transparent border border-white border-opacity-20 px-4 py-3 text-sm text-white placeholder-white placeholder-opacity-30 focus:border-[var(--stone)] focus:outline-none transition-colors" />
+                        </div>
+                        <div>
+                            <label class="text-xs tracking-widest uppercase opacity-50 block mb-2">Cognome</label>
+                            <input type="text" placeholder="Rossi"
+                                class="w-full bg-transparent border border-white border-opacity-20 px-4 py-3 text-sm text-white placeholder-white placeholder-opacity-30 focus:border-[var(--stone)] focus:outline-none transition-colors" />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-xs tracking-widest uppercase opacity-50 block mb-2">Email</label>
+                        <input type="email" placeholder="mario@example.com"
+                            class="w-full bg-transparent border border-white border-opacity-20 px-4 py-3 text-sm text-white placeholder-white placeholder-opacity-30 focus:border-[var(--stone)] focus:outline-none transition-colors" />
+                    </div>
+                    <div>
+                        <label class="text-xs tracking-widest uppercase opacity-50 block mb-2">Area di interesse</label>
+                        <select
+                            class="w-full bg-[var(--ink)] border border-white border-opacity-20 px-4 py-3 text-sm text-white focus:border-[var(--stone)] focus:outline-none transition-colors">
+                            <option value="">Seleziona...</option>
+                            <option>Diritto Civile</option>
+                            <option>Diritto Societario</option>
+                            <option>Diritto Bancario</option>
+                            <option>Contenzioso</option>
+                            <option>Diritto Immobiliare</option>
+                            <option>Mediazione e ADR</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-xs tracking-widest uppercase opacity-50 block mb-2">Messaggio</label>
+                        <textarea rows="4" placeholder="Descriva brevemente la sua situazione..."
+                            class="w-full bg-transparent border border-white border-opacity-20 px-4 py-3 text-sm text-white placeholder-white placeholder-opacity-30 focus:border-[var(--stone)] focus:outline-none transition-colors resize-none"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-[var(--stone)] text-[var(--ink)] py-4 text-sm tracking-widest uppercase font-medium hover:bg-white transition-colors">
+                        Invia Richiesta
+                    </button>
+                    <p id="form-msg" class="text-center text-sm text-[var(--stone)] hidden">Grazie! La contatteremo a
+                        breve.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════ FOOTER ══════════════════ -->
+    <footer class="bg-[#100e0b] text-[var(--parchment)] py-10 px-8 lg:px-20">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+                <p class="serif text-lg">Studio Legale <em class="text-[var(--stone)]">Arru</em></p>
+                <p class="text-xs opacity-40 mt-1">Via Fadda 5, 09125 Cagliari (CA)</p>
+            </div>
+            <div class="text-xs opacity-40 space-y-1 md:text-right">
+                <p>Avv. Antonello Arru · Cassazionista · Iscritto all'Albo dal 21/11/1975</p>
+                <p>Ordine degli Avvocati di Cagliari</p>
+                <p class="mt-2">© 2025 Studio Legale Arru · P.IVA [XXXXXXXXXX]</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // ── Navbar scroll ──
+        const navbar = document.getElementById('navbar');
+        const navLogo = document.getElementById('nav-logo');
+        const navLogoSub = document.getElementById('nav-logo-sub');
+        const navLinks = document.getElementById('nav-links');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('scrolled');
+                navLogo.classList.replace('text-[var(--warm-white)]', 'text-[var(--ink)]');
+                navLinks.classList.replace('text-[var(--parchment)]', 'text-[var(--ink)]');
+            } else {
+                navbar.classList.remove('scrolled');
+                navLogo.classList.replace('text-[var(--ink)]', 'text-[var(--warm-white)]');
+                navLinks.classList.replace('text-[var(--ink)]', 'text-[var(--parchment)]');
+            }
+        });
+
+        // ── Hamburger ──
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let menuOpen = false;
+
+        hamburger.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('open', menuOpen);
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // ── Smooth scroll ──
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // ── Reveal on scroll ──
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        reveals.forEach(el => observer.observe(el));
+
+        // ── Form ──
+        function handleForm(e) {
+            e.preventDefault();
+            const msg = document.getElementById('form-msg');
+            msg.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => msg.classList.add('hidden'), 5000);
+        }
+    </script>
+</body>
+
+</html>
