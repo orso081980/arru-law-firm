@@ -16,21 +16,25 @@ Studio Legale Arru has been serving clients in Cagliari since 1975, specializing
 ## Examples
 
 ### Example 1 (`example-1.html`)
+
 - Minimalist design with serif typography
 - Grid-based layout
 - Focus on content hierarchy
 
 ### Example 2 (`example-2.html`)
+
 - Hero slider with multiple images
 - Card-based team section
 - Emphasis on visual storytelling
 
 ### Example 3 (`example-3.html`)
+
 - Horizontal scrolling team section
 - Bold color scheme
 - Interactive hover effects
 
 ### Example 4 (`example-4.html`)
+
 - Traditional law firm aesthetic
 - Detailed service descriptions
 - Contact form integration
@@ -51,6 +55,7 @@ Studio Legale Arru has been serving clients in Cagliari since 1975, specializing
 ## Contact
 
 For inquiries about Studio Legale Arru:
+
 - Address: Via Fadda 5, 09125 Cagliari (CA)
 - Email: studio@arrulegale.it
 - Phone: +39 070 000 000
